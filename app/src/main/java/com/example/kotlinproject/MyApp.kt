@@ -1,43 +1,67 @@
 package com.example.kotlinproject
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.absoluteOffset
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
+import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.kotlinproject.component.MyNavigationDrawer
+import com.example.kotlinproject.mynavigation.Destinations
+import com.example.kotlinproject.mynavigation.MyNavigationActions
+import com.example.kotlinproject.view.EventMapView
+import com.example.kotlinproject.view.HomeView
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyApp(
   navController: NavHostController = rememberNavController()
 ) {
-  NavHost(navController = navController, startDestination = "second") {
-    composable("start") {
-      Column(
-        modifier = Modifier
-          .fillMaxWidth()
-          .fillMaxHeight()
-      ) {
-        Button(
-          onClick = {},
-          modifier = Modifier.absoluteOffset(x = 150.dp, y = 700.dp)
-        ) {
-          Text("Press me")
-        }
-      }
+  val navigatorActions = remember(navController) {
+    MyNavigationActions(navController)
+  }
+
+  NavHost(navController = navController, startDestination = Destinations.START_ROUTE) {
+
+    composable(Destinations.START_ROUTE) {
+      val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+      val coroutineScope = rememberCoroutineScope()
+      MyNavigationDrawer(
+        drawerState = drawerState,
+        content = {
+          HomeView(drawerState = drawerState, coroutineScope = coroutineScope)
+        },
+        navController = navController,
+        navigateToHome = navigatorActions.navigateToHome,
+        navigateToEventMap = navigatorActions.navigateToEventMap
+      )
     }
-    composable("second") {
-      Button(onClick = { /*TODO*/ }) {
-        Text("Press me 2")
-      }
+
+    composable(Destinations.EVENT_MAP) {
+      val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+      val coroutineScope = rememberCoroutineScope()
+      MyNavigationDrawer(
+        content = {
+          EventMapView()
+        },
+        drawerState = drawerState,
+        navigateToHome = navigatorActions.navigateToHome,
+        navigateToEventMap = navigatorActions.navigateToEventMap,
+        navController = navController
+      )
     }
+
+    composable(Destinations.COMPLETE_SCHEDULE) {}
+
+    composable(Destinations.SPEAKERS) {}
+
+    composable(Destinations.NOTICES) {}
+
+    composable(Destinations.ACTIVITIES_LIST) {}
   }
 
 }
