@@ -11,15 +11,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.kotlinproject.mynavigation.MyNavigationActions
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyNavigationDrawer(
-  content: @Composable () -> Unit,
   drawerState: DrawerState,
-  navigateToHome: () -> Unit,
-  navigateToEventMap: () -> Unit,
-  navController: NavController
+  navController: NavController,
+  navigationActions: MyNavigationActions,
+  content: @Composable () -> Unit,
 ) {
   ModalNavigationDrawer(
     drawerState = drawerState,
@@ -32,13 +32,13 @@ fun MyNavigationDrawer(
           },
           selected = false,
           onClick = {
-            navigateToHome()
+            navigationActions.navigateToHome()
           })
         NavigationDrawerItem(
           label = { Text(text = "Mapa do Evento") },
           selected = false,
           onClick = {
-            navigateToEventMap()
+            navigationActions.navigateToEventMap()
           }
         )
         NavigationDrawerItem(
@@ -47,7 +47,6 @@ fun MyNavigationDrawer(
           },
           selected = false,
           onClick = {
-
           }
         )
         NavigationDrawerItem(
