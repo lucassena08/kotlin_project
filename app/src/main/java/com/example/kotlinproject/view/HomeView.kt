@@ -14,6 +14,6 @@ fun HomeView(
   innerPadding: PaddingValues,
 ) {
   Column(modifier = Modifier.padding(innerPadding)) {
-    Text("teste")
+    Text("Home")
   }
 }

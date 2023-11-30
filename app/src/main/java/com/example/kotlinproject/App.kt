@@ -11,7 +11,7 @@ import com.example.kotlinproject.component.ActivitiesList
 import com.example.kotlinproject.component.CompleteSchedule
 import com.example.kotlinproject.component.EventMap
 import com.example.kotlinproject.component.Home
-import com.example.kotlinproject.component.Notices
+import com.example.kotlinproject.component.News
 import com.example.kotlinproject.component.Speakers
 import com.example.kotlinproject.mynavigation.Destinations
 import com.example.kotlinproject.mynavigation.MyNavigationActions
@@ -59,8 +59,8 @@ fun App() {
     }
 
     composable(Destinations.NEWS) {
-      Notices(
-        title = "Notices",
+      News(
+        title = "Event News",
         navController = navController,
         navigationActions = navigationActions,
       )
