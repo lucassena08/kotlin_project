@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -19,6 +20,7 @@ fun CompleteScheduleView(
 ) {
   Column(
     verticalArrangement = Arrangement.spacedBy(10.dp),
+    horizontalAlignment = Alignment.CenterHorizontally,
     modifier = Modifier
       .padding(innerPadding)
       .height(130.dp)
