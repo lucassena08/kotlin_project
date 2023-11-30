@@ -47,6 +47,7 @@ fun MyNavigationDrawer(
           },
           selected = false,
           onClick = {
+            navigationActions.navigateToCompleteSchedule()
           }
         )
         NavigationDrawerItem(
@@ -55,7 +56,7 @@ fun MyNavigationDrawer(
           },
           selected = false,
           onClick = {
-
+            navigationActions.navigateToSpeakers()
           }
         )
         NavigationDrawerItem(
@@ -64,7 +65,7 @@ fun MyNavigationDrawer(
           },
           selected = false,
           onClick = {
-
+            navigationActions.navigateToNews()
           }
         )
         NavigationDrawerItem(

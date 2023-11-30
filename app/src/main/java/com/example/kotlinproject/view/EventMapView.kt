@@ -13,11 +13,12 @@ import com.example.kotlinproject.R
 fun EventMapView(
   innerPadding: PaddingValues
 ) {
-  Column(modifier = Modifier.padding(innerPadding)) {
+  Column(
+    modifier = Modifier.padding(innerPadding)
+  ) {
     Image(
       painter = painterResource(id = R.drawable.eventmap),
       contentDescription = "Even Map"
     )
   }
-
 }

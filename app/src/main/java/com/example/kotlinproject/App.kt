@@ -44,6 +44,7 @@ fun App() {
 
     composable(Destinations.COMPLETE_SCHEDULE) {
       CompleteSchedule(
+        title = "Complete Schedule",
         navController = navController,
         navigationActions = navigationActions,
       )
@@ -51,13 +52,15 @@ fun App() {
 
     composable(Destinations.SPEAKERS) {
       Speakers(
+        title = "Speakers",
         navController = navController,
         navigationActions = navigationActions,
       )
     }
 
-    composable(Destinations.NOTICES) {
+    composable(Destinations.NEWS) {
       Notices(
+        title = "Notices",
         navController = navController,
         navigationActions = navigationActions,
       )
@@ -65,6 +68,7 @@ fun App() {
 
     composable(Destinations.ACTIVITIES_LIST) {
       ActivitiesList(
+        title = "Activities List",
         navController = navController,
         navigationActions = navigationActions,
       )

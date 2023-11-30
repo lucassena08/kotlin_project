@@ -6,6 +6,7 @@ import com.example.kotlinproject.mynavigation.MyNavigationActions
 
 @Composable
 fun ActivitiesList(
+  title: String,
   navController: NavController,
   navigationActions: MyNavigationActions
 ) {
