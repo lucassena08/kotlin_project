@@ -18,9 +18,10 @@ import androidx.compose.ui.unit.sp
 fun SpeakersView(
   innerPadding: PaddingValues,
 ) {
-  val itemsList = (1 ..  4).toList()
+  val itemsList = (0..3).toList()
+  val palestrantList = listOf<String>("Rodrigo", "Bernardo", "Pedro", "Augusto")
   LazyColumn(
-    verticalArrangement = Arrangement.spacedBy(30.dp),
+    verticalArrangement = Arrangement.spacedBy(25.dp),
     modifier = Modifier
       .padding(innerPadding)
       .height(400.dp)
@@ -28,8 +29,8 @@ fun SpeakersView(
   ) {
     items(itemsList) {
       Row {
-        Text("Palestrante $it", fontSize = 30.sp)
+        Text("Palestrante ${it + 1}: ${palestrantList[it]}", fontSize = 25.sp)
       }
+    }
   }
-}
 }

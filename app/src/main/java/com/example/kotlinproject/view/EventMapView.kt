@@ -31,9 +31,14 @@ fun EventMapView(
       contentDescription = "Event Map"
     )
     Text(
+      "Wet Salvador",
+      fontSize = 25.sp,
+      modifier = Modifier.offset(y = 20.dp)
+    )
+    Text(
       "Av. Luís Viana Filho, 9581 - Paralela",
       fontSize = 20.sp,
-      modifier = Modifier.offset(y = 20.dp)
+      modifier = Modifier.offset(y = 25.dp)
     )
     Text(
       "Salvador - BA, 41730-101",
