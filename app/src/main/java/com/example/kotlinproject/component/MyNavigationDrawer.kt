@@ -74,7 +74,7 @@ fun MyNavigationDrawer(
           },
           selected = false,
           onClick = {
-
+            navigationActions.navigateToActivitiesList()
           }
         )
       }

@@ -32,7 +32,7 @@ class MyNavigationActions(navController: NavHostController) {
     navController.navigate(route = Destinations.NEWS)
   }
 
-  val activitiesList: () -> Unit = {
+  val navigateToActivitiesList: () -> Unit = {
     navController.navigate(route = Destinations.ACTIVITIES_LIST)
   }
 }

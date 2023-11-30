@@ -15,8 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun NewsView(
-  innerPadding: PaddingValues
+fun ActivitiesListView (
+  innerPadding: PaddingValues,
 ) {
   val itemsList = (0..15).toList()
   LazyColumn(

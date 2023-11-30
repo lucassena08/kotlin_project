@@ -36,7 +36,7 @@ fun App() {
 
     composable(Destinations.EVENT_MAP) {
       EventMap(
-        title = "Event Map",
+        title = "Mapa do Evento",
         navController = navController,
         navigationActions = navigationActions,
       )
@@ -44,7 +44,7 @@ fun App() {
 
     composable(Destinations.COMPLETE_SCHEDULE) {
       CompleteSchedule(
-        title = "Complete Schedule",
+        title = "Programação Completa",
         navController = navController,
         navigationActions = navigationActions,
       )
@@ -52,7 +52,7 @@ fun App() {
 
     composable(Destinations.SPEAKERS) {
       Speakers(
-        title = "Speakers",
+        title = "Palestrantes",
         navController = navController,
         navigationActions = navigationActions,
       )
@@ -60,7 +60,7 @@ fun App() {
 
     composable(Destinations.NEWS) {
       News(
-        title = "Event News",
+        title = "Notícias",
         navController = navController,
         navigationActions = navigationActions,
       )
@@ -68,7 +68,7 @@ fun App() {
 
     composable(Destinations.ACTIVITIES_LIST) {
       ActivitiesList(
-        title = "Activities List",
+        title = "Lista de Atividades",
         navController = navController,
         navigationActions = navigationActions,
       )
